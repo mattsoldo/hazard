@@ -7,6 +7,19 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  config.gem 'health_monitor', :version => '>= 0.1.4'
+  config.gem 'will_paginate', :lib => 'will_paginate', :version => '~> 2.2'
+  config.gem 'erubis', :version => '>= 2.6.5'
+  config.gem 'paperclip', :version => '>= 2.3'
+  config.gem 'jammit', :version => '>= 0.3'
+  config.gem 'formtastic', :version => '~> 0.9'
+  config.gem 'query_trace', :version => '>= 0.1.1'
+  config.gem 'authlogic', :version => '~> 2.0'
+  config.gem 'searchlogic', :lib => 'searchlogic', :version => '~> 2.3'
+  config.gem 'haml', :version => '~> 2.2'
+  config.gem 'carmen', :version => '>= 0.1'
+  config.gem 'matthuhiggins-foreigner', :lib => 'foreigner'
+  config.gem 'compass', :lib => 'compass'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

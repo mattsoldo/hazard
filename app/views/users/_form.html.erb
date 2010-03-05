@@ -1,0 +1,6 @@
+<%= form.inputs :first_name, :last_name, :login, :email %>
+<br />
+<% if form.object.new_record? %>
+  <%= form.inputs :password, :password_confirmation %>
+<% end %>
+

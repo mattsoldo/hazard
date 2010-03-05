@@ -1,0 +1,7 @@
+<% title t('.title') %>
+
+<% semantic_form_for @user, :url => password_reset_path, :method => :put do |f| %>
+  <%= f.error_messages %>
+  <%= f.inputs :password, :password_confirmation %>
+  <%= f.commit_button t(".submit") %>
+<% end %>

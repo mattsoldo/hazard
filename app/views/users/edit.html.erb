@@ -1,9 +1,0 @@
-<% title t('.title') %>
-
-<% semantic_form_for @user, :url => account_path do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => "users/form", :object => f %>
-  <%= f.commit_button t('label.update') %>
-<% end %>
-
-<br /><%= link_to t('link.user'), account_path %>

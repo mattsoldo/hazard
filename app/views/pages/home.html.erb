@@ -1,0 +1,47 @@
+<% title 'hazard', :false %>
+
+<% content_for :top_menu do %>
+  <div id="top_menu" class="">
+    <% anonymous_only do %>
+      <%= link_to t('link.register'), new_account_path %>
+      <%= link_to t('link.login'), new_user_session_path %>
+    <% end %>
+    <% authenticated_only do %>
+      <%= link_to t('link.logout'), user_session_path, :method => :delete, :confirm => t('confirm.logout') %>
+      <%= link_to t('link.user'), account_path %>
+    <% end %>
+  </div>
+<% end %>
+
+<div id="main_wrapper">
+  <div id="left_menu" class="">
+    <ul>
+    <% anonymous_only do %>
+      <li><%= link_to t('link.register'), new_account_path %></li>
+      <li><%= link_to t('link.login'), new_user_session_path %></li>
+    <% end %>
+    <% authenticated_only do %>
+      <li><%= link_to "App menu item", "#" %></li>
+      <li><%= link_to "App menu item", "#" %></li>
+      <li><%= link_to "App menu item", "#" %></li>
+    <% end %>
+    </ul>
+    <% admin_only do %>
+      <% form_tag impersonate_users_path do %>
+        <%= select_tag "id", options_for_select(User.all.collect{ |u| [u.display_name, u.id] }) %>
+        <%= submit_tag 'Impersonate' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="main_with_left_menu" class="">
+    <h1><%= t('.welcome') %></h1>
+      <!--[if lt IE 7]>
+  	<p class="flash_error">
+  		<%= t('ie.upgrade_message', :upgrade_page_url => link_to(t('link.upgrade'), pages_path(:action => 'upgrade'), :target => :blank)) %>
+  	</p>
+    <![endif]-->
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>

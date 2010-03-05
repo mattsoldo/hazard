@@ -18,3 +18,14 @@ config.action_mailer.raise_delivery_errors = false
 config.gem 'annotate', :lib => 'annotate'
 config.gem 'bullet'
 config.gem 'inaction_mailer', :lib => 'inaction_mailer/force_load'
+config.middleware.use "Rack::Bug"
+
+config.after_initialize do
+  Bullet.enable = false           # flip to true to enable bullet
+  Bullet.alert = true             # javascript alert in browser
+  Bullet.bullet_logger = true     # log to separate bullet.log
+  Bullet.console = true           # log to browser console (Webkit or Firebug)
+  Bullet.growl = false            # log to Growl
+  Bullet.rails_logger = false     # log to current Rails log
+  Bullet.disable_browser_cache = true
+end

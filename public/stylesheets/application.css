@@ -1,0 +1,43 @@
+/* @group Browser Reset */
+
+html, body {
+  font-size: 12.5px; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: helvetica, verdana, arial, sans-serif;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: 1.25em;
+  text-align: left;
+  vertical-align: baseline; }
+
+html {
+  overflow-y: scroll; }
+
+a img, :link img, :visited img {
+  border: 0; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ul {
+  list-style: none; }
+
+  /* @end */
+
+
+
+#rails-env { position: fixed; left: 1em; font-weight: bold; padding: .2em 0.9em; text-transform: uppercase; opacity: 0.7; display: none }
+#rails-env.staging { color: #000; background: #ffff00; border: 2px solid #cccc20; border-top: none; display: block }
+#rails-env.development { color: #fff; background: #ff0000; border: 2px solid #cc2020; border-top: none; display: block }
